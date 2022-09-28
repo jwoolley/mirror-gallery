@@ -187,9 +187,11 @@ function cropAndWriteFile(path, imageOptions, sourceImage) {
 }
 
 function renderImageFromSvg(svg, outputPath) {
-  return svg2png(new Buffer(svg), { filename: __dirname })
+  return svg2png(new Buffer.from(svg), { filename: __dirname })
     .catch(e => console.log('\n *** Failed to create png: ' + e))
     .then(data => {
+      console.log('Current working directory: ', process.cwd());
+      // console.log('Rendered image: ', data);
       fs.writeFileSync(outputPath, data);
       console.log('\n *** Image saved to ' + outputPath);
       return {
