@@ -1,6 +1,6 @@
 // Utility for rendering html images to files
 'use strict';
-const webshot = require('webshot');
+const webshot = require('webshot-node');
 const svg2png = require('svg2png');
 const Jimp = require('jimp');
 const fs =  require('fs');
