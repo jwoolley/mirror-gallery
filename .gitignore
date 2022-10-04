@@ -51,5 +51,8 @@ build/
 out/
 tmp/
 
+# development folders
+local/
+
 # intellij
 .idea/

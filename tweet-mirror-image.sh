@@ -22,7 +22,7 @@ if
   [ -z "$1" ]
 then
 	echo "generating mirror gallery image"
-	node --trace-deprecation --harmony mtgnews -o "#flippedCardImage#"
+	node --trace-deprecation --harmony mtgnews -o --tweet "#flippedCardImage#"
 else
 	echo "generating $1 mirror gallery image(s)"
 	node --trace-deprecation --harmony mtgnews -c $1 -o "#flippedCardImage#"
