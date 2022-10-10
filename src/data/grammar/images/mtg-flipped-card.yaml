@@ -2,8 +2,10 @@
 flippedCardImage: >
   [#CONTENT.randomScryfallCard#]
   [_cardname:#_cardName1#][_cardImgSrc:#_imgUrl1#][_borderColor:#_borderColor1#][_maskColor:#_translateMaskColor#]
-  #_cardname# <> #_cardname.reverse#  
+  #_cardname# ⇔ #_cardname.reverse#  
   {svg svgString=`#svgFlippedCard#`}
+
+fakePlaceholderTwoWayArrow: ⇔↔⇄<>
 
 _translateMaskColor: "#_borderColor.replace(gold,DarkGoldenrod)#"
 

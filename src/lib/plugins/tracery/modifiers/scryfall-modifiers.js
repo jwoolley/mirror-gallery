@@ -6,7 +6,8 @@ const config = global.mtgnewsbot.config;
 const logger = config.loggers.scryfall;
 
 const SCRYFALL_REQUEST_URL = 'https://api.scryfall.com/cards/random';
-const SCRYFALL_REQUEST_URL_NORMAL_CARDS_ONLY =  SCRYFALL_REQUEST_URL + '?q=-type%3Ascheme%20-type%3Aplane%20-type%3Avanguard%20-type%3Aphenomenon%20-st:set_promo%20-is:digital'
+// const SCRYFALL_REQUEST_URL_NORMAL_CARDS_ONLY =  SCRYFALL_REQUEST_URL + '?q=-type%3Ascheme%20-type%3Aplane%20-type%3Avanguard%20-type%3Aphenomenon%20-st:set_promo%20-is:digital'
+const SCRYFALL_REQUEST_URL_NORMAL_CARDS_ONLY =  SCRYFALL_REQUEST_URL + '?q=layout%3Anormal%20-type%3Ascheme%20-type%3Aplane%20-type%3Avanguard%20-type%3Aphenomenon%20-st:set_promo%20-is:digital'
 
 function randomElement(array) {
   return array && array[Math.floor(Math.random() * array.length)];

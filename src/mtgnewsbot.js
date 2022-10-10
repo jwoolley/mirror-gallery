@@ -119,7 +119,7 @@ class MtgNewsbot {
   }
 
   async processHeadline(headline) {
-    const NUM_TWEET_ATTEMPTS = 5;
+    const NUM_TWEET_ATTEMPTS = 2;
 
     const exceptions = [];
 
