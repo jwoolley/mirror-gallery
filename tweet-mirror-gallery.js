@@ -11,8 +11,13 @@ function loadConfig(overridePath) {
 	return config;
 }
 
+// TODO: reintroduce commander CLI options
+const configFilePath = './config/heroku-config-override.js';
+
+console.log('process.env: ', JSON.stringify(process.env, null, ' '));
+
 console.log('Loading config...');
-loadConfig();
+loadConfig(configFilePath);
 
 const options = {
  count: 1,
