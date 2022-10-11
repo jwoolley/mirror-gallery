@@ -44,7 +44,7 @@ node_modules/
 .vscode
 
 # local config overrides
-config-override.json
+config-override.*
 
 # output folders
 build/
