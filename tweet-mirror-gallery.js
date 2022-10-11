@@ -11,6 +11,7 @@ function loadConfig(overridePath) {
 	return config;
 }
 
+console.log('Loading config...');
 loadConfig();
 
 const options = {
