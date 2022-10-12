@@ -21,6 +21,8 @@ console.log('process.env: ', JSON.stringify(process.env, null, ' '));
 console.log('Loading config...');
 loadConfig(configFilePath);
 
+const config = global.mtgnewsbot.config;
+
 if (!path.existsSync(config.paths.tempDirectory)) {
     fs.mkdirSync(config.paths.tempDirectory, { recursive: true, mode: 744 });
 }
