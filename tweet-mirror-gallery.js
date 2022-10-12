@@ -3,6 +3,7 @@
 
 global.mtgnewsbot = global.mtgnewsbot || {};
 
+const fs = require('fs');
 const Config = require('./config');
 
 function loadConfig(overridePath) {
@@ -18,6 +19,10 @@ console.log('process.env: ', JSON.stringify(process.env, null, ' '));
 
 console.log('Loading config...');
 loadConfig(configFilePath);
+
+if (!path.existsSync(config.paths.tempDirectory)) {
+    fs.mkdirSync(config.paths.tempDirectory, { recursive: true, mode: 744 });
+}
 
 const options = {
  count: 1,

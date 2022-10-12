@@ -5,7 +5,7 @@
   "author": "Mark Diehr <mdiehr@gmail.com> (https://www.goodgamery.com)",
   "main": "mtgnews",
   "scripts": {
-    "start": "./tweet-mirror-image.sh",
+    "start": "node tweet-mirror-gallery",
     "start-debug": "node --inspect-brk --harmony mtgnews",
     "print": "node --harmony mtgnews",
     "lint": "gulp lint",
