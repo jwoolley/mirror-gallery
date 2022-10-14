@@ -1,13 +1,13 @@
 {
-  "name": "mtgnewsbot",
-  "version": "1.1.0",
-  "description": "MTG News Robot",
+  "name": "Mirror Gallery",
+  "version": "1.1.1",
+  "description": "MTG art reflector and twitter boy",
   "author": "Mark Diehr <mdiehr@gmail.com> (https://www.goodgamery.com)",
-  "main": "mtgnews",
+  "main": "tweet-mirror-gallery",
   "scripts": {
     "start": "node tweet-mirror-gallery",
-    "start-debug": "node --inspect-brk --harmony mtgnews",
-    "print": "node --harmony mtgnews",
+    "start-debug": "node --inspect-brk --harmony tweet-mirror-gallery",
+    "print": "node --harmony tweet-mirror-gallery",
     "lint": "gulp lint",
     "test": "node test/index.js",
     "watch": "gulp"
@@ -53,7 +53,7 @@
   "bugs": {
     "url": "https://github.com/GoodGamery/mtgnewsbot/issues"
   },
-  "homepage": "https://github.com/GoodGamery/mtgnewsbot#readme",
+  "homepage": "https://twitter.com/mirror_gallery",
   "eslintConfig": {
     "extends": "eslint:recommended",
     "parserOptions": {
