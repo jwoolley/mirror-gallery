@@ -6,6 +6,7 @@ global.mtgnewsbot = global.mtgnewsbot || {};
 const fs = require('fs');
 const path = require('path');
 const Config = require('./config');
+const FileUtil = require('./src/lib/util/file');
 
 function loadConfig(overridePath) {
 	let config = new Config(overridePath);
@@ -23,7 +24,7 @@ loadConfig(configFilePath);
 
 const config = global.mtgnewsbot.config;
 
-if (!path.existsSync(config.paths.tempDirectory)) {
+if (!FileUtil.fileExists(config.paths.tempDirectory)) {
     fs.mkdirSync(config.paths.tempDirectory, { recursive: true, mode: 744 });
 }
 
