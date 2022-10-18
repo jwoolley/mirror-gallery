@@ -111,6 +111,10 @@ function parseMessage(message) {
         .split(ENDL_MARKER).join('\n')              // Restore endlines from before
         .replace(/`/g, '"')													// This gets quotes working
         .replace(/<</g, '{').replace(/>>/g, '}');
+
+
+      // Get the alt text out of it
+      altText = tags.svg.altText || altText;        
     }
 
     // Further process htmlimg tags
