@@ -1,0 +1,128 @@
+---
+# Entry point for tracery grammar flatten
+origin:
+- "#tellStory#"
+
+tellStory:
+- "#encounter.capitalize# #theStory#."
+
+encounter:
+- "[_indicated:#storyteller.a#,this #storyteller#]#_indicated# #relatesStory#"
+- "#describeEncounter# #storyteller.a# who #relatesStory#"
+
+describeEncounter:
+- "[_encounteringEntity:you,#yourFellowTravelers#,you and #yourFellowTravelers#]#_encounteringEntity# #encouter#"
+
+relatesStory:
+- "#tell.s# #story.a# #inWhich#" # {about / in which / of} belongs here
+
+inWhich: # ~ vocab
+- in which
+- during which
+
+yourFellowTravelers:
+- "your #travelingGroup#"
+- "your #travelingGroup#"
+- "your [_c:#companion#,#companion.s#]#_c#"
+
+companion: # vocab
+- "[_traveling:,traveling ]#_traveling#companion"
+- guide
+
+travelingGroup: # vocab
+- party
+- group
+- company
+- caravan
+- fellow travelers
+- "#entourage#"
+
+entourage: # vocab
+- entourage
+- retinue
+
+theStory:
+- "#theStoryHeresay#"
+- "#theStoryPersonal#"
+
+theStoryHeresay:
+- "a horse steals the stockings off of a sleeping magistrate"
+
+theStoryPersonal:
+  # __speaker_their should be initialized w/ storyteller 
+- "[__speaker_their:their]#__speaker_their# father-in-law is abducted by a band of ruffians"
+
+tell: # TODO: match tell_xyz to appropriate class of story (w/ e.g. #tell_story#)
+- "#tell_general#"
+- "#tell_dramatic#"
+
+tell_general:
+- tell
+- relate
+- recount
+- describe
+
+tell_dramatic:
+- tell
+- weave
+- spin
+- narrate
+
+# TBD
+tell_straightforward:
+- xyz
+
+storyteller:
+- "#simpleCharacter#"
+- "#storytellerDisposition# #simpleCharacter#"
+
+storytellerDisposition:
+- lost
+- terrified
+- distracted
+- melodramatic
+- agitated
+- somber
+- charming
+- surly
+
+simpleCharacter:
+- peddler
+- traveler
+- orphan
+- farmer
+- sage
+- "wise [_who:woman,man]#_who#"
+
+# TBD
+storyDescriptorPhrase:
+- xyz
+
+story_tale:
+- story
+- tale
+- fable
+- parable
+
+story_longform:
+- legend
+- chronicle
+
+story_account:
+- report
+- account
+
+story: # vocab
+- story
+- tale
+- "#story_tale#"
+- "#story_account#"
+- "#story_longform#"
+# ^^^ associate w/ unique type of story? parable vs. personal account
+
+encouter: # vocab
+- encounter
+- meet
+- "[_happen:happen,come,stumble]#_happen# upon"
+- "are [_met:met,approached,stopped]#_met# by"
+

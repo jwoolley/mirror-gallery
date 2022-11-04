@@ -3,11 +3,11 @@
   "version": "1.1.1",
   "description": "MTG art reflector and twitter boy",
   "author": "Mark Diehr <mdiehr@gmail.com> (https://www.goodgamery.com)",
-  "main": "tweet-mirror-gallery",
+  "main": "mtgnews",
   "scripts": {
-    "start": "node tweet-mirror-gallery",
-    "start-debug": "node --inspect-brk --harmony tweet-mirror-gallery",
-    "print": "node --harmony tweet-mirror-gallery",
+    "start": "node mtgnews",
+    "start-debug": "node --inspect-brk --harmony mtgnews",
+    "print": "node --harmony mtgnews",
     "lint": "gulp lint",
     "test": "node test/index.js",
     "watch": "gulp"
