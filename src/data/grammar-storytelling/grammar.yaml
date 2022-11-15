@@ -11,19 +11,18 @@ encounter:
 - "#describeEncounter# #storyteller.a# who #relatesStory#"
 
 describeEncounter:
-- "[_encounteringEntity:you,#yourFellowTravelers#,you and #yourFellowTravelers#]#_encounteringEntity# #encouter#"
+- "you #encounter_verb#"
+- "[_encounteringEntity:your #companion.s#,you and your #travelingGroup#]#_encounteringEntity# #encounter_verb#"
+- "your [_encounteringEntity:#travelingGroup#,#companion#]#_encounteringEntity# #encounters_verb#"
 
 relatesStory:
-- "#tell.s# #story.a# #inWhich#" # {about / in which / of} belongs here
+- "#tellsAStory# #inWhich#" # {about / in which / of} belongs here
 
 inWhich: # ~ vocab
 - in which
 - during which
-
-yourFellowTravelers:
-- "your #travelingGroup#"
-- "your #travelingGroup#"
-- "your [_c:#companion#,#companion.s#]#_c#"
+- wherein
+- where
 
 companion: # vocab
 - "[_traveling:,traveling ]#_traveling#companion"
@@ -46,11 +45,18 @@ theStory:
 - "#theStoryPersonal#"
 
 theStoryHeresay:
-- "a horse steals the stockings off of a sleeping magistrate"
+- "[_thief:#animal#,#animalGroup#,#personCharacterProfession#,#storyCharacter#]#_thief.a# steals [_theft:#item.a#,the #clothingOrAccessory#]#_theft# [_from:from,off of]#_from# [_disposition:#storytellerDisposition#,#characterDisposition#][_person:#personAuthorityFigure#,#storyCharacter#][_storySubject:#_person#,#_disposition# #_person#,#_disposition# #_person#]#_storySubject.a#"
 
 theStoryPersonal:
   # __speaker_their should be initialized w/ storyteller 
-- "[__speaker_their:their]#__speaker_their# father-in-law is abducted by a band of ruffians"
+- "[__speaker_their:their]#__speaker_their# #personRelationalUnique# is [_attacked:attacked,abducted,terrorized,surrounded,threatened,besieged,ambushed,overtaken,surprised,beset,eaten,maimed,mauled,killed,questioned,lectured,tickled,worshipped,beguiled,ensorcelled,slain,teased,pestered,plagued,#verbStrictlyTransitivePastTense#]#_attacked# by [_team:band,gang,group,team,horde,ring][_actorCharacter:#storyCharacter#,ruffian,bandit,outlaw,pirate,brigand,raider,highwayman][_actors:#_team# of #_actorCharacter.s#,#animalGroup#]#_actors#"
+
+
+tellsAStory:
+- "#tell.s# a story"
+- "#tell_dramatic.s# #story_tale.a#"
+- "gives #story_account.a#"
+- "[_recounts:recounts,recalls,relates,describes][_story:#story_tale#,#story_longform#]#_recounts# #_story.a#"
 
 tell: # TODO: match tell_xyz to appropriate class of story (w/ e.g. #tell_story#)
 - "#tell_general#"
@@ -76,6 +82,16 @@ storyteller:
 - "#simpleCharacter#"
 - "#storytellerDisposition# #simpleCharacter#"
 
+characterDisposition:
+- sleeping
+- frightened
+- forlorn
+- suspicious
+- destitute
+- gullible
+- arrogant
+- friendly
+
 storytellerDisposition:
 - lost
 - terrified
@@ -85,6 +101,10 @@ storytellerDisposition:
 - somber
 - charming
 - surly
+- frightened
+- forlorn
+- suspicious
+- shifty
 
 simpleCharacter:
 - peddler
@@ -93,6 +113,10 @@ simpleCharacter:
 - farmer
 - sage
 - "wise [_who:woman,man]#_who#"
+
+storyCharacter:
+- "#personCharacterProfession#"
+- "#personCharacterClass#"
 
 # TBD
 storyDescriptorPhrase:
@@ -120,9 +144,15 @@ story: # vocab
 - "#story_longform#"
 # ^^^ associate w/ unique type of story? parable vs. personal account
 
-encouter: # vocab
+encounter_verb: # vocab
 - encounter
 - meet
 - "[_happen:happen,come,stumble]#_happen# upon"
 - "are [_met:met,approached,stopped]#_met# by"
+
+encounters_verb: # vocab
+- encounters
+- meets
+- "[_happen:happen,come,stumble]#_happen.s# upon"
+- "is [_met:met,approached,stopped]#_met# by"
 

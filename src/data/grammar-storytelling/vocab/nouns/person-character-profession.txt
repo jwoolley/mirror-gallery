@@ -1,0 +1,29 @@
+architect
+archivist
+armorer
+astronomer
+baliff
+brewmaster
+butcher
+blacksmith
+candlemaker
+cartwright
+carver
+cobbler
+engineer
+falconer
+inventor
+jester
+jewler
+headsman
+magistrate
+metalworker
+scholar
+scrivener
+storyteller
+tailor
+tax collector
+undertaker
+woodworker
+#animal# trainer
+#nounCompoundWorthy#wright

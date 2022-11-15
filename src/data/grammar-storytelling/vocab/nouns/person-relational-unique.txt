@@ -1,0 +1,18 @@
+spouse
+best friend
+mother
+father
+cousin
+mother-in-law
+father-in-law
+grandmother
+grandfather
+sister
+brother
+uncle
+soulmate
+secret lover
+neighbor
+landlord
+liege
+[_mostLeast:,least ]#_mostLeast#favorite [_who:niece,nephew,uncle,aunt,cousin,parent,child]#_who#
