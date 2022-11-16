@@ -50,7 +50,6 @@ money clip
 longjohns
 handbag
 wetsuit
-fatsuit
 zoot suit
 petticoat
 hockey mask
@@ -66,3 +65,4 @@ shaving kit
 duffel bag
 umbrella
 breastplate
+stockings

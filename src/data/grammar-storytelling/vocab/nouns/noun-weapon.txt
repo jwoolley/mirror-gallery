@@ -1,0 +1,22 @@
+sword
+longbow
+dagger
+knife
+bullwhip
+crossbow
+quarterstaff
+tomahawk
+blowgun
+longsword
+scimitar
+warhammer
+throwing star
+grappling hook
+frying pan
+shillelagh
+pitchfork
+speargun
+claymore
+katana
+blowdart
+vial of acid

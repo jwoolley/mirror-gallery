@@ -23,7 +23,7 @@ freak
 fiend
 titan
 horror
-cyborg
+golem
 ambassador
 agent
 mercenary
@@ -132,7 +132,7 @@ superstar
 zookeeper
 organ grinder
 superintendant
-liberal
+libertine
 loser
 stranger
 jester
@@ -188,8 +188,6 @@ surgeon
 tormentor
 expatriate
 #characterProfession#
-#minorCharacterClass#
-#playerCategory#
 #personAuthorityFigure#
 #personRelational#
 #personPejorative#

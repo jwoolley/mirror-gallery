@@ -1,0 +1,11 @@
+friend
+enemy
+relative
+neighbor
+sibling
+cousin
+in-law
+rival
+companion
+partner
+assistant

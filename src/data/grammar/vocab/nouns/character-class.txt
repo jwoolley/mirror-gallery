@@ -95,7 +95,7 @@ survivor
 vegan
 renegade
 flunky
-henchman
+[_person:person,woman,man]hench#_person#
 emissary
 orphan
 enemy
@@ -103,7 +103,6 @@ commander
 vagrant
 vagabond
 puppet
-dog catcher
 coward
 citizen
 heretic
@@ -113,10 +112,10 @@ pharaoh
 emperor
 empress
 weaponsmith
-madman
+[_person:woman,man]mad#_person#
 sommelier
 scofflaw
-bellhop
+valet
 blackguard
 pickpocket
 handmaiden
@@ -139,7 +138,6 @@ jester
 concubine
 oligarch
 guttersnipe
-commuter
 albino
 concierge
 malcontent
@@ -189,7 +187,6 @@ tormentor
 expatriate
 #characterProfession#
 #minorCharacterClass#
-#playerCategory#
 #personAuthorityFigure#
 #personRelational#
 #personPejorative#

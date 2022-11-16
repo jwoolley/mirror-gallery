@@ -1,10 +1,30 @@
 ---
 # Entry point for tracery grammar flatten
 origin:
-- "#tellStory#"
+- "#__setup##tellStory#"
+
+__setup:
+- "#__theirPronouns##_storytellerPronouns#"
+
+__theirPronouns:
+- "[__they:they][__their:their][__them:them]"
+
+__herPronouns:
+- "[__they:she][__their:her][__them:her]"
+
+__himPronouns:
+- "[__they:he][__their:his][__them:him]"
+
+__randomPronouns:
+- "#__saveTempPronouns##__theirPronouns#[__randomThey:#__they#][__randomTheir:#__their#][__randomThem:#__them#]#__restoreTempPronouns#"
+- "#__saveTempPronouns##__herPronouns#[__randomThey:#__they#][__randomTheir:#__their#][__randomThem:#__them#]#__restoreTempPronouns#"
+- "#__saveTempPronouns##__himPronouns#[__randomThey:#__they#][__randomTheir:#__their#][__randomThem:#__them#]#__restoreTempPronouns#"
+
+_storytellerPronouns:
+- "#__randomPronouns#[__storytellerThey:#__randomThey#][__storytellerTheir:#__randomTheir#][__storytellerThem:#__randomThem#]"
 
 tellStory:
-- "#encounter.capitalize# #theStory#."
+- "[_theStory:#theStory#]#encounter.capitalize# #_theStory#."
 
 encounter:
 - "[_indicated:#storyteller.a#,this #storyteller#]#_indicated# #relatesStory#"
@@ -40,23 +60,48 @@ entourage: # vocab
 - entourage
 - retinue
 
+
+
+# VOCAB
+performsARitual:
+- performs a ritual
+- holds a ceremony
+- holds a seance
+- holds communion
+- prays
+- "summons [_demon:#massNoun# demon,demon]#_demon.a#"
+
+interactsWithBuilding:
+- "[_interactsWithBuilding:builds,constructs,ransacks,infiltrates,investigates,searches,sabotages,storms,hides #_inOn#,sneaks #_inOn#to]#_interactsWithBuilding# #building.a#"
+
+# VOCAB
+cooperatesWithSomehow:
+- "#performsARitual#"
+- "#interactsWithBuilding#"
+# runs away with, conspires with,
+
+# VOCAB
+establishesRelationship:
+- makes friends with
+- makes enemies with
+- befriends
+- offends
+
 theStory:
 - "#theStoryHeresay#"
 - "#theStoryPersonal#"
 
 theStoryHeresay:
-- "[_thief:#animal#,#animalGroup#,#personCharacterProfession#,#storyCharacter#]#_thief.a# steals [_theft:#item.a#,the #clothingOrAccessory#]#_theft# [_from:from,off of]#_from# [_disposition:#storytellerDisposition#,#characterDisposition#][_person:#personAuthorityFigure#,#storyCharacter#][_storySubject:#_person#,#_disposition# #_person#,#_disposition# #_person#]#_storySubject.a#"
+- "[_thief:#animal#,#animalGroup#,#personCharacterProfession#,#storyCharacter#]#_thief.a# [_theftObject:#item.a#,the #clothingOrAccessory#][_giftObject:#item.a#,their #clothingOrAccessory#][_from:from,off of][_theft:steals #_theftObject# #_from#][_gives:gives,bequeaths,gifts,entrusts][_gift:#_gives# #_giftObject# to][_interaction:#_theft#,#_gift#]#_interaction# [_disposition:#storytellerDisposition#,#characterDisposition#][_person:#personAuthorityFigure#,#storyCharacter#][_storySubject:#_person#,#_disposition# #_person#,#_disposition# #_person#]#_storySubject.a#"
 
 theStoryPersonal:
-  # __speaker_their should be initialized w/ storyteller 
-- "[__speaker_their:their]#__speaker_their# #personRelationalUnique# is [_attacked:attacked,abducted,terrorized,surrounded,threatened,besieged,ambushed,overtaken,surprised,beset,eaten,maimed,mauled,killed,questioned,lectured,tickled,worshipped,beguiled,ensorcelled,slain,teased,pestered,plagued,#verbStrictlyTransitivePastTense#]#_attacked# by [_team:band,gang,group,team,horde,ring][_actorCharacter:#storyCharacter#,ruffian,bandit,outlaw,pirate,brigand,raider,highwayman][_actors:#_team# of #_actorCharacter.s#,#animalGroup#]#_actors#"
-
+- "[__relation:#personRelationalUnique#,#personRelationalNonunique#]#__storytellerTheir# #__relation# [_interactsWith:#establishesRelationship#,#cooperatesWithSomehow# with][_attacked:attacked,abducted,terrorized,surrounded,threatened,besieged,ambushed,overtaken,surprised,beset,eaten,maimed,mauled,killed,questioned,lectured,tickled,worshipped,beguiled,ensorcelled,slain,teased,pestered,plagued,,chased,pursued,hunted,#verbStrictlyTransitivePastTense#][_occurrence:is #_attacked# by,#_interactsWith#]#_occurrence#[_team:band,gang,group,team,horde,ring][_actorCharacter:#storyCharacter#,ruffian,bandit,outlaw,pirate,brigand,raider][_actors:#_team# of #_actorCharacter.s#,#animalGroup#] #_actors.a#"
 
 tellsAStory:
 - "#tell.s# a story"
-- "#tell_dramatic.s# #story_tale.a#"
+- "[_tellsTale:#tell_dramatic.s# #story_tale.a#,#tell_dramatic.s# #dramatic_story_adj.a# #story_tale#]#_tellsTale#"
 - "gives #story_account.a#"
-- "[_recounts:recounts,recalls,relates,describes][_story:#story_tale#,#story_longform#]#_recounts# #_story.a#"
+- "[_recounts:recounts,recalls,relates,describes][_theStory:#theStoryHeresay#][_story:#story_tale#,#story_longform#]#_recounts# #_story.a#"
 
 tell: # TODO: match tell_xyz to appropriate class of story (w/ e.g. #tell_story#)
 - "#tell_general#"
@@ -67,6 +112,40 @@ tell_general:
 - relate
 - recount
 - describe
+
+dramatic_story_adj:
+- harrowing
+- gripping
+- disturbing
+- riveting
+- stirring
+- chilling
+- impassioned
+- somber
+- sobering
+- intriguing
+- intricate
+- fascinating
+- extraordinary
+- elaborate
+- picturesque
+- eloquent
+- graphic
+- fanciful
+- bizarre
+- meandering
+- colorful
+- convoluted
+- rambling
+- inventive
+- cautionary
+- "#_dramatic_story_adj_uncommon#"
+
+_dramatic_story_adj_uncommon:
+- byzantine
+- labyrinthine
+- baroque
+- banal
 
 tell_dramatic:
 - tell
@@ -79,8 +158,8 @@ tell_straightforward:
 - xyz
 
 storyteller:
-- "#simpleCharacter#"
-- "#storytellerDisposition# #simpleCharacter#"
+- "#simpleCharacterStoryteller#"
+- "#storytellerDisposition# #simpleCharacterStoryteller#"
 
 characterDisposition:
 - sleeping
@@ -106,13 +185,26 @@ storytellerDisposition:
 - suspicious
 - shifty
 
-simpleCharacter:
+simpleCharacterStoryteller:
+- "[__genderedCharacterThey:#__they#][__genderedCharacterTheir:#__their#][__genderedCharacterThem:#__them#]#_simpleCharacter#[__storytellerThey:#__genderedCharacterThey#][__storytellerTheir:#__genderedCharacterTheir#][#__genderedCharacterThem#:them]"
+
+_simpleCharacter:
 - peddler
 - traveler
 - orphan
 - farmer
 - sage
-- "wise [_who:woman,man]#_who#"
+- "wise #genderedCharacter#"
+
+__saveTempPronouns:
+- "[__tempThey:#__they#][__tempTheir:#__their#][__tempThem:#__them#]"
+
+__restoreTempPronouns:
+- "[__they:#__tempThey#][__their:#__tempTheir#][__them:#___tempThem#]"
+
+genderedCharacter:
+- "#__saveTempPronouns##__herPronouns#[__genderedCharacterThey:#__they#][__genderedCharacterTheir:#__their#][__genderedCharacterThem:#__them#]#__restoreTempPronouns#woman"
+- "#__saveTempPronouns##__himPronouns#[__genderedCharacterThey:#__they#][__genderedCharacterTheir:#__their#][__genderedCharacterThem:#__them#]#__restoreTempPronouns#man"
 
 storyCharacter:
 - "#personCharacterProfession#"
