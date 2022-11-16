@@ -59,10 +59,12 @@ class Config {
 
 		merge(this, base);
 		// apply overrides from config overrides file
-	  	let override = loadConfigOverride(overridePath);
-	  	if (override) {
-		  merge(this, override);	
-	  	}
+		if (overridePath) {		
+		  	let override = loadConfigOverride(overridePath);
+		  	if (override) {
+			  merge(this, override);	
+		  	}
+		}
 
 		// create loggers and enable or disable based on preferences
 		const loggers = {

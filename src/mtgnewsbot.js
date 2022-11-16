@@ -46,20 +46,8 @@ class MtgNewsbot {
       }
     }
 
-    headlines.forEach(headline =>
-      this.processHeadline(headline)
-        .then(result => {
-          if (this.options.verbose) {
-            console.log(`Final result:\n${result}`);
-          }
-        })
-        .catch(err => {
-          console.error(err);
-          if (this.options.discord || this.options.tweet || this.options.toot)
-            Discord.sendError(`${err}`);
-        })
-    );
-  }
+    return headlines;
+}
 
   static createFileName(headline) {
     const prefix = headline.text
