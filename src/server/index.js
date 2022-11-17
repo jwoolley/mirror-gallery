@@ -16,17 +16,24 @@ const storypageHtml = `<head>
 		background-color: black;
 	}
 
-	div.storyTextContainer {
-		padding: 12px;
+  div.storyTextContainer {
+		padding: 1rem;
 		color: #d3c8ab;
-		font-size: 24px;
+		text-align: center;
+		font-size: 2rem;
+		text-size-adjust: 500%;
 		font-family: Alice;
 		position:  absolute;
-		top:  2em;
 		left:  50%;
 		margin-right: -50%;
-		transform: translate(-50%, -50%);
+		transform: translate(-50%, 0%);
 	}
+
+	@media screen and (max-width: 800px) {
+  		div.storyTextContainer {
+    		padding: 2rem;
+		}
+  }
 	</style>
 </head>
 <body><div class="storyTextContainer">__STORY_TEXT__</body>`
