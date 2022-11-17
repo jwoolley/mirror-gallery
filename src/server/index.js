@@ -5,7 +5,7 @@ const app = express();
 
 const { storyApi } = require('./api');
 
-// hacky!! fix
+// hacky!! load from static file instead & fix
 const storypageHtml = `<head>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,6 +14,7 @@ const storypageHtml = `<head>
 	<style>
 	body {
 		background-color: black;
+		background-image: url('../black-leather-seamless.jpg');
 	}
 
   div.storyTextContainer {
@@ -38,14 +39,11 @@ const storypageHtml = `<head>
 </head>
 <body><div class="storyTextContainer">__STORY_TEXT__</body>`
 
-// app.engine('html', require('ejs').renderFile);
-// app.set('view engine', 'html');
-
 app.get('/', (req, res) => {
   res.send('Hello World!')
 });
 
-app.get('/story/get', async (req, res) => {
+app.get('/story', async (req, res) => {
   const numStories = 1;
   console.log(`Making request to storyApi (numStories=${numStories})`);
   try {
@@ -61,5 +59,7 @@ app.get('/story/get', async (req, res) => {
   	res.send(errMessage);
   }
 });
+
+app.use(express.static('./src/server/static/images'));
 
 app.listen(PORT, () => console.log(`Server listening on port ${PORT}`));
