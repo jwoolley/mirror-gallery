@@ -13,13 +13,13 @@ const storypageHtml = `<head>
 
 	<style>
 	body {
-		background-color: black;
-		background-image: url('../black-leather-seamless.jpg');
+		background-color: #040300;
+		// background-image: url('../black-leather-seamless.jpg');
 	}
 
   div.storyTextContainer {
 		padding: 1rem;
-		color: #d3c8ab;
+		color: #e8d6a7;
 		text-align: center;
 		font-size: 2rem;
 		text-size-adjust: 500%;
