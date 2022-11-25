@@ -1,6 +1,6 @@
 'use strict';
 const path = require('path')
-const merge = require('lodash.merge');
+const deepMerge = require('./src/lib/util/deep-merge');
 const Logger = require('./src/lib/util/logger');
 
 const DEFAULT_OVERRIDE_JSON_PATH = './config-override.json';
@@ -57,12 +57,12 @@ class Config {
 		  MASTODON_API_URL: process.env.MASTODON_API_URL
 		};
 
-		merge(this, base);
+		deepMerge(this, base);
 		// apply overrides from config overrides file
 		if (overridePath) {		
 		  	let override = loadConfigOverride(overridePath);
 		  	if (override) {
-			  merge(this, override);	
+				  deepMerge(this, override);	
 		  	}
 		}
 
@@ -74,7 +74,7 @@ class Config {
 			scryfall: new Logger('scryfall', this.logPrefs.scryfall)
 		};
 
-		merge(this, { loggers: loggers });
+		deepMerge(this, { loggers: loggers });
 
 		Object.freeze(this);
 	}
