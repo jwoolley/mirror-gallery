@@ -1,0 +1,30 @@
+locationWhereArtifactFound:
+  - at the bottom of 
+
+# locationWithBottom:
+#   - swamp
+#   - lake
+#   - hill
+#   - midden heap
+#   - pool
+
+locationWithBottom:
+- [_locationWithBottomAdj:#adjForLocation#]#_locationWithBottom#
+
+_locationWithBottom:
+  - "[_locationWithBottomAdj:#adjForBodyOfWater#]swamp"
+  - "[_locationWithBottomAdj:#adjForBodyOfWater#]lake"
+  - bluff
+  - knoll
+  - midden heap
+  - "[_locationWithBottomAdj:#adjForBodyOfWater#,#adjForBodyOfWater#,adjForLocation]pool"
+
+adjForBodyOfWater:
+  - deep
+  - shallow
+  - dark
+
+adjForLocation:
+  - remote
+  - hidden
+  - enchanted

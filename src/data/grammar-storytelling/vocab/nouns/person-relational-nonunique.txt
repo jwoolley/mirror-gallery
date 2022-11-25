@@ -4,7 +4,6 @@ relative
 neighbor
 sibling
 cousin
-in-law
 rival
 companion
 partner

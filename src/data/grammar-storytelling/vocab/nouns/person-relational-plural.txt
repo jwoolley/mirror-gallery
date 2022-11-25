@@ -1,0 +1,12 @@
+parents
+sisters
+brothers
+cousins
+granparents
+in-laws
+neighbors
+friends
+enemies
+assistants
+[_animals:pets,#animalGroup#]
+[_niecesAndNephews:nieces,nephews,nieces and nephews]#_niecesAndNephews#

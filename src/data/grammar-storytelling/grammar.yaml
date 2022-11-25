@@ -7,18 +7,19 @@ __setup:
 - "#__theirPronouns##_storytellerPronouns#"
 
 __theirPronouns:
-- "[__they:they][__their:their][__them:them]"
+- "[__they:they][__their:their][__them:them][__isAre:are]"
 
 __herPronouns:
-- "[__they:she][__their:her][__them:her]"
+- "[__they:she][__their:her][__them:her][__isAre:is]"
 
-__himPronouns:
-- "[__they:he][__their:his][__them:him]"
+__hisPronouns:
+- "#__saveTempPronouns##__herPronouns#[__pronounedCharacterThey:#__they#][__pronounedCharacterTheir:#__their#][__pronounedCharacterThem:#__them#][__pronounedCharacterIsAre:is]#__restoreTempPronouns#woman":
+- "[__they:he][__their:his][__them:him][__isAre:is]"
 
 __randomPronouns:
-- "#__saveTempPronouns##__theirPronouns#[__randomThey:#__they#][__randomTheir:#__their#][__randomThem:#__them#]#__restoreTempPronouns#"
-- "#__saveTempPronouns##__herPronouns#[__randomThey:#__they#][__randomTheir:#__their#][__randomThem:#__them#]#__restoreTempPronouns#"
-- "#__saveTempPronouns##__himPronouns#[__randomThey:#__they#][__randomTheir:#__their#][__randomThem:#__them#]#__restoreTempPronouns#"
+- "#__saveTempPronouns##__theirPronouns#[__randomThey:#__they#][__randomTheir:#__their#][__randomThem:#__them#][__isAre:are]#__restoreTempPronouns#"
+- "#__saveTempPronouns##__herPronouns#[__randomThey:#__they#][__randomTheir:#__their#][__randomThem:#__them#][__isAre:is]#__restoreTempPronouns#"
+- "#__saveTempPronouns##__hisPronouns#[__randomThey:#__they#][__randomTheir:#__their#][__randomThem:#__them#][__isAre:is]#__restoreTempPronouns#"
 
 _storytellerPronouns:
 - "#__randomPronouns#[__storytellerThey:#__randomThey#][__storytellerTheir:#__randomTheir#][__storytellerThem:#__randomThem#]"
@@ -53,14 +54,11 @@ travelingGroup: # vocab
 - group
 - company
 - caravan
-- fellow travelers
 - "#entourage#"
 
 entourage: # vocab
 - entourage
 - retinue
-
-
 
 # VOCAB
 performsARitual:
@@ -72,7 +70,7 @@ performsARitual:
 - "summons [_demon:#massNoun# demon,demon]#_demon.a#"
 
 interactsWithBuilding:
-- "[_interactsWithBuilding:builds,constructs,ransacks,infiltrates,investigates,searches,sabotages,storms,hides #_inOn#,sneaks #_inOn#to]#_interactsWithBuilding# #building.a#"
+- "[_building:#building#][_interactsWithBuilding:builds,constructs,ransacks,infiltrates,investigates,searches,sabotages,storms,hides #_inOn#,sneaks #_inOn#to]#_interactsWithBuilding# #_building.a#"
 
 # VOCAB
 cooperatesWithSomehow:
@@ -92,10 +90,18 @@ theStory:
 - "#theStoryPersonal#"
 
 theStoryHeresay:
-- "[_thief:#animal#,#animalGroup#,#personCharacterProfession#,#storyCharacter#]#_thief.a# [_theftObject:#item.a#,the #clothingOrAccessory#][_giftObject:#item.a#,their #clothingOrAccessory#][_from:from,off of][_theft:steals #_theftObject# #_from#][_gives:gives,bequeaths,gifts,entrusts][_gift:#_gives# #_giftObject# to][_interaction:#_theft#,#_gift#]#_interaction# [_disposition:#storytellerDisposition#,#characterDisposition#][_person:#personAuthorityFigure#,#storyCharacter#][_storySubject:#_person#,#_disposition# #_person#,#_disposition# #_person#]#_storySubject.a#"
+- "[_thief:#animal#,#animalGroup#,#personCharacterProfession#,#storyCharacter#]#_thief.a# [_theftObject:#item.a#,the #clothingOrAccessory#][_giftObject:#item.a#,their #clothingOrAccessory#][_from:from,off of][_theft:steals #_theftObject# #_from#][_gives:gives,bequeaths,gifts,entrusts][_gift:#_gives# #_giftObject# to][_interaction:#_theft#,#_gift#]#_interaction# [_person:#personAuthorityFigure#,#storyCharacter#][_storySubject:#_person#,#characterDisposition# #_person#,#characterDisposition# #_person#]#_storySubject.a#"
 
 theStoryPersonal:
-- "[__relation:#personRelationalUnique#,#personRelationalNonunique#]#__storytellerTheir# #__relation# [_interactsWith:#establishesRelationship#,#cooperatesWithSomehow# with][_attacked:attacked,abducted,terrorized,surrounded,threatened,besieged,ambushed,overtaken,surprised,beset,eaten,maimed,mauled,killed,questioned,lectured,tickled,worshipped,beguiled,ensorcelled,slain,teased,pestered,plagued,,chased,pursued,hunted,#verbStrictlyTransitivePastTense#][_occurrence:is #_attacked# by,#_interactsWith#]#_occurrence#[_team:band,gang,group,team,horde,ring][_actorCharacter:#storyCharacter#,ruffian,bandit,outlaw,pirate,brigand,raider][_actors:#_team# of #_actorCharacter.s#,#animalGroup#] #_actors.a#"
+- "#_theStoryPersonalCharacterOne# [_with:with,together with,alongside][_interactsWith:#establishesRelationship#,#cooperatesWithSomehow# with][_attacked:attacked,abducted,terrorized,surrounded,threatened,besieged,ambushed,overtaken,surprised,beset,eaten,maimed,mauled,killed,questioned,lectured,tickled,worshipped,beguiled,ensorcelled,slain,teased,pestered,plagued,chased,pursued,hunted,#verbStrictlyTransitivePastTense#][_occurrence:#__storyCharacterOneIsAre# #_attacked# by,#_interactsWith#]#_occurrence#[_team:band,gang,group,team,horde,ring][_actorCharacter:#storyCharacter#,ruffian,bandit,outlaw,pirate,brigand,raider][_actors:#_team# of #_actorCharacter.s#,#animalGroup#] #_actors.a#"
+
+_theStoryPersonalCharacterOne:
+- "#__storytellerThey#[__storyCharacterOneIsAre:#__storytellerIsAre#]"
+- "#__storytellerThey#[__storyCharacterOneIsAre:#__storytellerIsAre#]"
+- "#__storytellerThey#[__storyCharacterOneIsAre:#__storytellerIsAre#]"
+- "#__storytellerTheir# #personRelationalUnique#[__storyCharacterOneIsAre:is]"
+- "#__storytellerTheir# #personRelationalNonunique#[__storyCharacterOneIsAre:is]"
+- "#__storytellerTheir# #personRelationalPlural#[__storyCharacterOneIsAre:are]"
 
 tellsAStory:
 - "#tell.s# a story"
@@ -170,6 +176,9 @@ characterDisposition:
 - gullible
 - arrogant
 - friendly
+- destitute
+- skeptical
+- covetous
 
 storytellerDisposition:
 - lost
@@ -184,9 +193,13 @@ storytellerDisposition:
 - forlorn
 - suspicious
 - shifty
+- flustered
+- 
+- talkative
+- gossipy
 
 simpleCharacterStoryteller:
-- "[__genderedCharacterThey:#__they#][__genderedCharacterTheir:#__their#][__genderedCharacterThem:#__them#]#_simpleCharacter#[__storytellerThey:#__genderedCharacterThey#][__storytellerTheir:#__genderedCharacterTheir#][#__genderedCharacterThem#:them]"
+- "[__pronounedCharacterThey:#__they#][__pronounedCharacterTheir:#__their#][__pronounedCharacterThem:#__them#]#_simpleCharacter#[__storytellerThey:#__pronounedCharacterThey#][__storytellerTheir:#__pronounedCharacterTheir#][__storytellerIsAre:#__pronounedCharacterIsAre#]"
 
 _simpleCharacter:
 - peddler
@@ -194,19 +207,21 @@ _simpleCharacter:
 - orphan
 - farmer
 - sage
-- "wise #genderedCharacter#"
+- "wise #pronounedCharacter#"
 
 __saveTempPronouns:
-- "[__tempThey:#__they#][__tempTheir:#__their#][__tempThem:#__them#]"
+- "[__tempThey:#__they#][__tempTheir:#__their#][__tempThem:#__them#][__tempIsAre:#__isAre#]"
 
 __restoreTempPronouns:
-- "[__they:#__tempThey#][__their:#__tempTheir#][__them:#___tempThem#]"
+- "[__they:#__tempThey#][__their:#__tempTheir#][__them:#___tempThem#][#__isAre#:#__tempIsAre#]"
 
-genderedCharacter:
-- "#__saveTempPronouns##__herPronouns#[__genderedCharacterThey:#__they#][__genderedCharacterTheir:#__their#][__genderedCharacterThem:#__them#]#__restoreTempPronouns#woman"
-- "#__saveTempPronouns##__himPronouns#[__genderedCharacterThey:#__they#][__genderedCharacterTheir:#__their#][__genderedCharacterThem:#__them#]#__restoreTempPronouns#man"
+pronounedCharacter:
+- "#__saveTempPronouns##__theirPronouns#[__pronounedCharacterThey:#__they#][__pronounedCharacterTheir:#__their#][__pronounedCharacterThem:#__them#][__pronounedCharacterIsAre:#__isAre#]#__restoreTempPronouns#person"
+- "#__saveTempPronouns##__herPronouns#[__pronounedCharacterThey:#__they#][__pronounedCharacterTheir:#__their#][__pronounedCharacterThem:#__them#][__pronounedCharacterIsAre:#__isAre#]#__restoreTempPronouns#woman"
+- "#__saveTempPronouns##__hisPronouns#[__pronounedCharacterThey:#__they#][__pronounedCharacterTheir:#__their#][__pronounedCharacterThem:#__them#][__pronounedCharacterIsAre:#__isAre#]#__restoreTempPronouns#man"
 
 storyCharacter:
+
 - "#personCharacterProfession#"
 - "#personCharacterClass#"
 
