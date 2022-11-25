@@ -46,6 +46,11 @@ class MtgNewsbot {
       }
     }
 
+
+    headlines.forEach(headline => {
+      console.log(`\n* ${headline.text}`);
+    });
+
     return headlines;
 }
 

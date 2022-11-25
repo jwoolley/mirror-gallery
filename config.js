@@ -5,7 +5,7 @@ const Logger = require('./src/lib/util/logger');
 
 const DEFAULT_OVERRIDE_JSON_PATH = './config-override.json';
 const DEFAULT_OVERRIDE_JS_PATH = './config-override.js';
-const DEFAULT_GRAMMAR_PATH = './src/data/grammar';
+const DEFAULT_GRAMMAR_PATH = './src/data/grammar-storytelling';
 const TWEET_LENGTH = 280;
 const TEMPFILE_PATH = '/tmp';
 
