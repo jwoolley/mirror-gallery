@@ -37,7 +37,7 @@ const storypageHtml = `<head>
   }
 	</style>
 </head>
-<body><div class="storyTextContainer">__STORY_TEXT__</body>`
+<body><div class="storyTextContainer">__STORY_TEXT__</div><hr class="footer-line"/></body>`;
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
