@@ -25,7 +25,7 @@ class HeadlineMaker {
    * Generates a headline and returns its text contents, with any tags stripped out
    */
   async generateTextHeadline(customOrigin) {
-    return await this.generateHeadline(customOrigin).text;
+    return (await this.generateHeadline(customOrigin)).text;
   }
 }
 

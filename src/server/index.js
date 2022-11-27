@@ -3,7 +3,16 @@ const express = require('express');
 const PORT = process.env.PORT || 4000;
 const app = express();
 
-const { storyApi } = require('./api');
+const { StoryApi } = require('./api');
+
+let _storyApi;
+
+function getStoryApi() {
+	if (!_storyApi) {
+		_storyApi = new StoryApi();
+	}
+	return _storyApi;
+}
 
 // hacky!! load from static file instead & fix
 const storypageHtml = `<head>
@@ -47,9 +56,9 @@ app.get('/story', async (req, res) => {
   const numStories = 1;
   console.log(`Making request to storyApi (numStories=${numStories})`);
   try {
-  	const stories = await storyApi.getStories(numStories);
-  	console.log(`Received response from storyApi.getStories(): ${JSON.stringify(stories)}`);
-  	const html = storypageHtml.replace('__STORY_TEXT__', stories[0]);
+  	const stories = await getStoryApi().getStoriesAsJson(numStories);
+  	console.log(`Received response from storyApi.getStoriesAsJson(): ${JSON.stringify(stories)}`);
+  	const html = storypageHtml.replace('__STORY_TEXT__', stories[0].text);
   	res
   		.header('Content-Type', 'text/html')
   		.send(html);

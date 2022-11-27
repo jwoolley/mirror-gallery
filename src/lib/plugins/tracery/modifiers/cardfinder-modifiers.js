@@ -1,10 +1,16 @@
 'use strict';
 const request = require('request');
-const config = global.mtgnewsbot.config;
+const Config = require('../../../../../config.js');
 const readJsonFile = require('../../../util/read-json-file.js');
 const staticCardDataFile = './src/data/cards/example-cards.json';
 
-const logger = config.loggers.cardfinder;
+let _logger;
+function getLogger() {
+  if (!_logger) {
+    _logger = Config.globalConfig.loggers.cardfinder;
+  }
+  return _logger;
+}
 
 function randomElement(array) {
   return array && array[Math.floor(Math.random() * array.length)];
@@ -126,9 +132,9 @@ async function cardSearchTwoParter(separator, params) {
     q: `name:${searchTerm}` + (additionalQueryTerms ? ` ${additionalQueryTerms}` : '')
   };
 
-  logger.log(`separator: ${separator}`);
-  logger.log(`searchTerm: ${searchTerm}`);
-  logger.log(`query.q: ${query.q}`);
+  getLogger().log(`separator: ${separator}`);
+  getLogger.log(`searchTerm: ${searchTerm}`);
+  getLogger.log(`query.q: ${query.q}`);
 
   // optional string prefix to remove before parsing
   var ignorePrefix = params[1] || '';
@@ -154,7 +160,7 @@ async function cardSearchTwoParter(separator, params) {
 }
 
 async function randomCards(limit) {
-    logger.log(`Finding ${limit} random cards`);
+    getLogger().log(`Finding ${limit} random cards`);
 
   const query = { 
     q: 'cmc >= 0',
@@ -183,7 +189,7 @@ function stripVersionLetterCode(s) {
       return match[1];
     }
   } catch (e) {
-    logger.warn('Error parsing version letter code: ' + e);
+    getLogger.warn('Error parsing version letter code: ' + e);
   }
   return s;  
 }
@@ -243,9 +249,9 @@ async function cardSearchOneWordName(undefined, params) {
 
 async function cardSearchCustomQuery(s, params) {
   if (s) {
-    logger.log('parsing query argument: ' + s);    
+    getLogger().log('parsing query argument: ' + s);    
 
-    logger.log('[cardSearchCustomQuery.s]: ' + s);
+    getLogger().log('[cardSearchCustomQuery.s]: ' + s);
 
 
     // replace spaces in quotes strings with +s
@@ -256,11 +262,11 @@ async function cardSearchCustomQuery(s, params) {
       });
     }
 
-    logger.log('[cardSearchCustomQuery.s (post space-replace)]: ' + s);
+    getLogger().log('[cardSearchCustomQuery.s (post space-replace)]: ' + s);
 
     const terms = s.trim().split(/\s+/);
 
-    logger.log('[cardSearchCustomQuery.terms]: ' + terms);
+    getLogger().log('[cardSearchCustomQuery.terms]: ' + terms);
 
     try {
       let query = terms.reduce((query, term) => {        
@@ -282,13 +288,13 @@ async function cardSearchCustomQuery(s, params) {
         }
         return query += `${key}:${value}`;
       }, '');
-      logger.log('parsed query argument: ' + query);
+      getLogger().log('parsed query argument: ' + query);
       return cardFinderSearch({ q: query }, params);
     } catch (e) {
-      logger.warn(e);
+      getLogger().warn(e);
     }    
   } else {
-    logger.log('query argument not specified.');        
+    getLogger().log('query argument not specified.');        
   }
 
   return cardSearchRandom(undefined, params);
@@ -299,7 +305,7 @@ async function searchCardFinder(query) {
 
   return new Promise((resolve, reject) => {
     request.get({ url: SEARCH_API_JSON_URL, qs: query }, (err, data, body) => {
-      logger.log('REQUEST DATA '); logger.log(JSON.stringify(data));
+      getLogger().log('REQUEST DATA '); getLogger().log(JSON.stringify(data));
 
       if (err) {
         reject(err);
@@ -323,38 +329,38 @@ async function cardFinderSearch(query, params, additionalFields) {
     if (parseInt(params[0]) > 0) {
       queryLimit = parseInt(params[0]);
     } else {
-      logger.warn(`Invalid query limit specified for query ${JSON.stringify(query)}: '${params[0]}' is not a positive integer.`);
+      getLogger().warn(`Invalid query limit specified for query ${JSON.stringify(query)}: '${params[0]}' is not a positive integer.`);
     }
   }
 
   query.limit = queryLimit;
   query.sort = 'random';
 
-  logger.log(`Searching for ${queryLimit} cards.`);
+  getLogger().log(`Searching for ${queryLimit} cards.`);
   try {
     try {
       resultData = await searchCardFinder(query);
       try {
         result = JSON.parse(resultData);
 
-        logger.log('Retrieved ' + result.length + ' cards.');
+        getLogger().log('Retrieved ' + result.length + ' cards.');
 
         if (result.error) {
           result = [];
         }
 
         if (result.length < queryLimit) {          
-          logger.warn(`Zero or insufficient results returned from card search: expected ${queryLimit} but received ${result.length}.`);
+          getLogger().warn(`Zero or insufficient results returned from card search: expected ${queryLimit} but received ${result.length}.`);
             
           if (params[1] === 'notRandom') {
-            logger.warn(`'notRandom' paramter specified. Returning empty result.`);            
+            getLogger().warn(`'notRandom' paramter specified. Returning empty result.`);            
             return '';
           }
 
-          logger.warn('Fetching random cards.');
+          getLogger().warn('Fetching random cards.');
 
           resultData = await randomCards(queryLimit - result.length);
-          logger.log('Retrieved ' + JSON.parse(resultData).length + ' additional cards.');
+          getLogger().log('Retrieved ' + JSON.parse(resultData).length + ' additional cards.');
 
           result = result.concat(JSON.parse(resultData));
         }
@@ -365,12 +371,12 @@ async function cardFinderSearch(query, params, additionalFields) {
       throw new Error('Failed to fetch card data: ' + e);
     }      
   } catch (e) {
-    logger.warn(e);    
+    getLogger().warn(e);    
     result = [randomStaticCards(queryLimit)];
   }
 
-  logger.log('Result: ' + JSON.stringify(result));
-  logger.log('Total cards: ' + result.length);
+  getLogger().log('Result: ' + JSON.stringify(result));
+  getLogger().log('Total cards: ' + result.length);
 
   try {    
     let finalResult = '';
@@ -447,16 +453,16 @@ async function cardFinderSearch(query, params, additionalFields) {
             const value = field.parseField(card);
             finalResult = finalResult.concat(`[${label}:${value}]`);
           } catch (e) {
-            logger.warn(`Unable to parse additional field ${field.getLabel()}: ${e}`);
+            getLogger().warn(`Unable to parse additional field ${field.getLabel()}: ${e}`);
           }
         });
       }      
     }
 
-    logger.log('Constructed cardsearch result: ' + finalResult);
+    getLogger().log('Constructed cardsearch result: ' + finalResult);
     return finalResult;
   } catch (e) {
-    logger.warn(e);
+    getLogger().warn(e);
     return 'SEARCH_FAILED_NO_RESULT';
   }
 }

@@ -4,7 +4,7 @@ const webshot = require('webshot-node');
 const svg2png = require('svg2png');
 const Jimp = require('jimp');
 const fs =  require('fs');
-const config = global.mtgnewsbot.config;
+const Config = require('../../config');
 
 const webshotOptions = {
   windowSize: { width: 1024, height: 768 }
@@ -20,13 +20,13 @@ function renderImageFromHeadline(headline, outputPath) {
   if(headline.tags && headline.tags.svg && headline.tags.svg.svgString) {
     const svg = headline.tags.svg.svgString;
 
-    config.loggers.svg.log(`\nRendering SVG:\n\n ${svg}`);
+    Config.globalConfig.loggers.svg.log(`\nRendering SVG:\n\n ${svg}`);
 
     return renderImageFromSvg(svg, outputPath);
   } else if(headline.tags && headline.tags.htmlImg && headline.tags.htmlImg.htmlImgString) {
     const html = headline.tags.htmlImg.htmlImgString;
     
-    config.loggers.html.log(`\nRendering HTML:\n\n ${html}`);
+    Config.globalConfig.loggers.html.log(`\nRendering HTML:\n\n ${html}`);
 
     const cropOptions = {
       width: 		parseInt(headline.tags.htmlImg.width),
@@ -74,7 +74,7 @@ function renderImageFromHtml(html, outputPath, imageOptions) {
             msg: `Image rendered to ${outputPath}`
           });
         })
-        .then(config.debugOptions.deleteTempImages ? () => fs.unlink(tempFile, (err) => {
+        .then(Config.globalConfig.debugOptions.deleteTempImages ? () => fs.unlink(tempFile, (err) => {
           if (err) {
             reject(err);
           }

@@ -5,14 +5,15 @@
   "author": "Mark Diehr <mdiehr@gmail.com> (https://www.goodgamery.com)",
   "main": "mtgnews",
   "scripts": {
-    "start": "node mtgnews",
+    "start": "node index.js",
     "server": "node ./src/server/",
     "server-dev": "nodemon ./src/server/",
     "start-debug": "node --inspect-brk --harmony mtgnews",
     "print": "node --harmony mtgnews",
     "lint": "gulp lint",
     "test": "node test/index.js",
-    "watch": "gulp"
+    "watch": "gulp",
+    "watch-dev": "NODE_PATH=`pwd` node ./tools/watch.dev.js"
   },
   "engines": {
     "node": ">=18.9.1"
