@@ -2,13 +2,13 @@
 'use strict';
 
 const uuid = require(`uuid`);
+const Config = require('../config');
 const NewsEngine = require('./news-engine');
 const RenderImage = require('./lib/render-image');
 const TwitterClient = require('./lib/api/twitter-client');
 const MastodonClient = require('./lib/api/mastodon-client');
 const Discord = require('./lib/discord');
 
-const config = global.mtgnewsbot.config;
 
 class MtgNewsbot {
   constructor(options) {
@@ -21,12 +21,12 @@ class MtgNewsbot {
 
     if (this.options.tweet) {
       this.options.count = 1; // Restrict to a single tweet
-      this.twitter = new TwitterClient(config);
+      this.twitter = new TwitterClient(Config.globalConfig);
     }
 
     if (this.options.toot) {
       this.options.count = 1; // Restrict to a single toot
-      this.mastodon = new MastodonClient(config);
+      this.mastodon = new MastodonClient(Config.globalConfig);
     }
   }
 
@@ -36,7 +36,7 @@ class MtgNewsbot {
     let maxTries = 10;  // Don't spin forever, ever
     while (headlines.length < this.options.count && (maxTries-- > 0)) {
       const moreHeadlines = await this.newsEngine.generateHeadlines(this.options.origin, this.options.count - headlines.length);
-      headlines = headlines.concat(moreHeadlines.filter(s => s.text.length <= config.tweetLength));
+      headlines = headlines.concat(moreHeadlines.filter(s => s.text.length <= Config.globalConfig.tweetLength));
     }
 
     if (headlines.length === 0) {
@@ -118,7 +118,7 @@ class MtgNewsbot {
 
     let postedMessage = headline.text;
     console.log(`\n* ${headline.text}`);
-    const outputPath = `${config.paths.tempDirectory}/${MtgNewsbot.createFileName(headline)}.png`;
+    const outputPath = `${Config.globalConfig.paths.tempDirectory}/${MtgNewsbot.createFileName(headline)}.png`;
     const renderResult = await RenderImage.fromHeadline(headline, outputPath);
     if (renderResult.rendered) {
       console.log("Render result: " + renderResult.msg);

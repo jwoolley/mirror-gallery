@@ -1,41 +1,41 @@
 'use strict';
 
-const config = global.mtgnewsbot.config;
+const Config = require('../config');
 const HeadlineMaker = require('./headline-maker');
 const buildGrammar = require('./build-grammar');
 
 const DEFAULT_ORIGIN_STRING = `#origin#`;
 
-class NewsEngine {
-  constructor() {
+class NewsEngine {  
+  constructor(grammarPath, originOverride) {
     // load the default grammar
-    this.grammar = buildGrammar(config.defaultGrammarPath);
+    this.grammar = buildGrammar(grammarPath || Config.globalConfig.defaultGrammarPath);
     // Override the origin
-    this.grammar["origin"] = config.origin || this.grammar["origin"];
+    this.grammar.origin = originOverride || this.grammar.origin;
 
-    if (config.origin) {
-      console.info(`Grammar origin was overridden to ${JSON.stringify(this.grammar.origin)}`);
+    if (originOverride) {
+      console.info(`Grammar origin was overridden to ${JSON.stringify(originOverride)}`);
     }
 
     this.headlineMaker = new HeadlineMaker(this.grammar);
   }
 
-  async generateHeadline (customOrigin) {
+  async generateHeadline(customOrigin) {
     return await this.headlineMaker.generateHeadline(customOrigin || DEFAULT_ORIGIN_STRING);
   }
 
-  async generateHeadlines (customOrigin, numHeadlines) {
+  async generateHeadlines(customOrigin, numHeadlines) {
     const headlines = [];
-    for (let i = 0; i < numHeadlines; ++i) {
+    for (let i = 0; i < numHeadlines; i++) {
       headlines.push(await this.headlineMaker.generateHeadline(customOrigin || DEFAULT_ORIGIN_STRING));
     }
     return headlines;
   }
 
-  async generateTextHeadlines (customOrigin, numHeadlines) {
+  async generateTextHeadlines(customOrigin, numHeadlines) {
     const headlines = [];
     for (let i = 0; i < numHeadlines; ++i) {
-      await headlines.push(this.headlineMaker.generateTextHeadline(customOrigin || DEFAULT_ORIGIN_STRING));
+      headlines.push(await this.headlineMaker.generateTextHeadline(customOrigin || DEFAULT_ORIGIN_STRING));
     }
     return headlines;
   }

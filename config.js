@@ -31,9 +31,23 @@ function loadConfigOverride(overridePath) {
 	}, undefined);
 }
 
+
+function _initGlobalConfig(configOverridePath) {
+	if (!global.mtgnewsbot) {
+		global.mtgnewsbot = {};
+	}
+
+	if (!global.mtgnewsbot.config) {
+		console.log(`Initializing global config using ${ configOverridePath || 'default config path'}`);
+		const config = new Config(configOverridePath);
+		global.mtgnewsbot.config = config;
+	}
+	
+	return global.mtgnewsbot.config;
+}
+
 class Config {
 	constructor(overridePath) {
-
 		let base = {
 		  defaultGrammarPath:  DEFAULT_GRAMMAR_PATH,
 		  debugOptions: {
@@ -77,6 +91,16 @@ class Config {
 		deepMerge(this, { loggers: loggers });
 
 		Object.freeze(this);
+	}
+
+	static initGlobalConfig(configOverridePath) {
+		return _initGlobalConfig(configOverridePath);
+	}
+
+	static get globalConfig() {
+ 		// initialize using defaults, (if initGlobalConfig hasn't been called already)
+		Config.initGlobalConfig();
+		return global.mtgnewsbot.config;
 	}
 }
 

@@ -1,11 +1,8 @@
 #!/usr/bin/env node --harmony
 'use strict';
 
-global.mtgnewsbot = global.mtgnewsbot || {};
-
 // Command processor
 const commander = require('commander');
-const Config = require('./config');
 
 function getOptions(commandLineOptions) {
   // Combine with default options	
@@ -34,12 +31,6 @@ function getOptions(commandLineOptions) {
   return options;
 }
 
-function loadConfig(overridePath) {
-	let config = new Config(overridePath);
-	global.mtgnewsbot.config = config;
-	return config;
-}
-
 commander
     .version('1.0.0')
     .usage('[options]')
@@ -54,8 +45,5 @@ commander
     .parse(process.argv);
 
 const options = getOptions(commander);
-loadConfig(options.configOverride)
-
-const MtgNewsbot = require('./src/mtgnewsbot.js');
-let bot = new MtgNewsbot(options);
-bot.run();
+const MirrorGallery = require('./src/mirror-gallery.js');
+MirrorGallery.run(options);
