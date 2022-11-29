@@ -10,16 +10,7 @@ dbgLong:
   - "#dbgLong71#"
 dbgLong71: =========-=========-=========-=========-=========-=========-=========-O
 dbgLong70: =========-=========-=========-=========-=========-=========-=========-
-dbgCap: "[headline:raphaël lévy drafts urza's saga in malmö's latest GP]#headline.capitalizeAll#"
-
-dbgImgHeadline:
- - "#fromTheVaultGraphicAnnouncement#"
- - "#duelDecksGraphicAnnouncement#"
- - "#cotdImageHtml#"
- - "#gathererRulingImage#"
- - "#duelDecksGraphicAnnouncement#"
- - "#duelDecksGraphicAnnouncement#"
- - "#duelDecksGraphicAnnouncement#" 
+dbgCap: "[_example:raphaël lévy drafts urza's saga in malmö's latest GP]#_example.capitalizeAll#"
 
 dbgReplace:
  - "[word:banana]#word.replace(a,u)#"

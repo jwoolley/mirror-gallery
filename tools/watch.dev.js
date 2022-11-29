@@ -2,8 +2,12 @@ const { watch } = require('fs/promises');
 const MirrorGallery = require('../src/mirror-gallery');
 const NUM_HEADLINES = 5;
 
-function runMirrorGallery() {
-  MirrorGallery.run({ count: NUM_HEADLINES });
+async function runMirrorGallery() {
+  try {
+    await MirrorGallery.run({ count: NUM_HEADLINES });
+  } catch (e) {
+    console.error(e);
+  }
 }
 
 async function watchProject() {
@@ -14,7 +18,7 @@ async function watchProject() {
   console.clear();
   console.log(`Watching ${pathToWatch}`);
 
-  runMirrorGallery();
+  await runMirrorGallery();
 
   try {
     const watcher = watch(pathToWatch, { signal, recursive: true });
@@ -22,13 +26,12 @@ async function watchProject() {
       console.log(`Watching ${pathToWatch}`);
       console.clear();      
       console.log(`Change detected at ${(new Date()).toLocaleTimeString()}`);
-      runMirrorGallery();
+      await runMirrorGallery();
     }
   } catch(e) {
     if (e.name === 'AbortError') {
       return;
     }
-    throw e;
   }
 }
 

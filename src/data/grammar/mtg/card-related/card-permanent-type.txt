@@ -1,6 +1,0 @@
-artifact
-creature
-enchantment
-land
-planeswalker
-[_other:aura,vehicle,creature token,clue,contraption,cartouche,curse,shrine,saga]#_other#
