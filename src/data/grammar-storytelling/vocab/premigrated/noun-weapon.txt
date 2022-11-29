@@ -1,18 +1,17 @@
-machine gun
-sniper rifle
-flamethrower
+sword
+longbow
+dagger
+knife
+bullwhip
 crossbow
 quarterstaff
 tomahawk
-hand grenade
 blowgun
+longsword
 scimitar
-samurai sword
-battle Axe
-bullwhip
+warhammer
 throwing star
 grappling hook
-elephant gun
 frying pan
 shillelagh
 pitchfork
@@ -20,3 +19,4 @@ speargun
 claymore
 katana
 blowdart
+vial of acid

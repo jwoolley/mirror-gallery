@@ -56,3 +56,6 @@ local/
 
 # intellij
 .idea/
+
+# maco os
+.DS_Store
