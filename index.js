@@ -13,7 +13,7 @@ function getOptions(commandLineOptions) {
     tweet: false,
     toot: false,
     discord: false,
-    configOverride: undefined
+    configOverride: undefined,
   }, commandLineOptions);
 
   // Time to log

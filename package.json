@@ -3,7 +3,7 @@
   "version": "1.1.1",
   "description": "MTG art reflector and twitter boy",
   "author": "Mark Diehr <mdiehr@gmail.com> (https://www.goodgamery.com)",
-  "main": "mtgnews",
+  "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "server": "node ./src/server/",

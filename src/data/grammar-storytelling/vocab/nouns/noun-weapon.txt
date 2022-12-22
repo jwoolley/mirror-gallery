@@ -8,7 +8,7 @@ hand grenade
 blowgun
 scimitar
 samurai sword
-battle Axe
+battle axe
 bullwhip
 throwing star
 grappling hook

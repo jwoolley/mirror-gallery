@@ -1,0 +1,255 @@
+specialPower: 
+- "the power of #nounAbstractSpecialPowerSimple#"
+- "#_specificPowerOf#"
+- "#_groupEntityBasedPower_rule#"
+
+_specificPowerOf:
+- "[_power:#_unusualSubstanceModifier#,the power of #_unusualSubstanceModifier#]#_power# #_secretion#"
+- "[_power:#_abilityEnhancement# #_normalAbility#,the power of #_abilityEnhancement# #_normalAbility#]#_power#"
+- "the power of #_specificPowerUnusual#"
+
+_specificPowerToPhrase:
+- "the #_powerAbility# to #_specificPowerTo#"
+
+_specificPowerTo:
+- "[_what:#animal#]#_transform# into [_what:#_what#,#_what#,#_what# #_powerDisposition#]#_what.a#"
+- "[_what:#concreteNoun#,#concreteNoun#,#_pile# of #massNoun#]#_transform# into [_what:#_what#,#_what#,#_what# #_powerDisposition#]#_what.a#"
+
+_specificPowerUnusual:
+- "[_degree:enhanced,360-degree][_part:neck,torso,eye.limb] #_part# rotation"
+- "anti-adhesion"
+- "#_temporalManipulation# aging"
+- "#_temporalManipulation# sleep"
+- "#_temporalManipulation# travel"
+- "[_manipulation:detection,purification,drinking,synthesis,manipulation]#liquid# #_manipulation#"
+
+_temporalManipulation:
+- accelerated
+- decelerated
+- controlled
+- disordered
+- syncopated
+- reverse
+- alternate
+- ancestral
+- "#_paranormal#"
+
+_pile:
+- pile
+- mound
+- heap
+
+_transform:
+- turn
+- turn
+- transform
+- transform
+- shapeshift
+
+_groupEntityBasedPower_rule:
+- "[_groupForPower:#mysticalEntity.s#,#_groupEntityBasedPower_BroadGroup#]the #_powerAbility# #_groupBasedEntityPowerPhrase# #_groupForPower#"
+- "[_groupForPower:#mysticalEntity.s#,#_groupEntityBasedPower_BroadGroup#][_thePower:the #_powerAbility# #_groupBasedEntityPowerPhrase# #_groupForPower#][_power:#_thePower#,#_thePower# #_powerDisposition#]#_power#"
+- "[_thePower:the #_powerAbility# to #_groupEntityBasedPower_Special#][_power:#_thePower#,#_thePower# #_powerDisposition#]#_power#"
+- "[_thePower:the #_powerAbility# to #_groupEntityBasedPower_Special#][_power:#_thePower#,#_thePower# #_powerDisposition#]#_power#"
+
+_groupEntityBasedPower_Special:
+- "[_toDoWhat:summon,materialize,command][_horde:horde,army,host,swarm][_entityOneOrGroup:#mysticalEntity#,#_horde# of #mysticalEntity.s#][_theWhat:#animalPlural#,#animalFancyGroup.a#,#_entityOneOrGroup.a#]#_toDoWhat# #_theWhat#"
+
+_paranormal:
+- paranormal
+- supernatural
+- preternatural
+- ghostly
+- otherworldly
+- subliminal
+- uncanny
+- diabolic
+- necromantic
+- occult
+- angelic
+- divine
+- infernal
+- ancestral
+- archaic
+- interdimensional
+- cosmic
+- subatomic
+- microbial
+- gravitational
+- reptilian
+- draconic
+- sylvan
+- arachnid
+- benthic
+- insectoid
+- aquatic
+- crystalline
+- harmonic
+- arboreal
+- chron
+- ego
+
+nounAbstractSpecialPowerSimple:
+- telepathy
+- omniscience
+- pyrokinesis
+- cryokinesis
+- electrokinesis
+- clarivoyance
+- procognition
+- astral projection
+- levitation
+- petrification
+- dream walking
+- water breathing
+- firebreathing
+- thaumaturgy
+- photographic memory
+- perfect pitch
+- precongnition
+- mass hypnosis
+- "#_paranormal# materialization"
+- "#_paranormal# attunement"
+- "#_paranormal# mastery"
+- "#_paranormal# symbiosis"
+- "#_paranormal# perception"
+- "#_paranormal# detection"
+- "#_paranormal# augmentation"
+- "#_paranormal# fusion"
+- "#_paranormal# erasure"
+- "#_paranormal# hypnosis"
+- "#_paranormal# duplication"
+- "[_p:#_abilityEnhancement#,#_paranormal#,#_paranormal#]immunity"
+- "[_p:#_abilityEnhancement#,#_paranormal#,#_paranormal#]tethering"
+- "[_p:#_abilityEnhancement#,#_paranormal#,#_paranormal#]speech"
+- "[_p:flight,#_paranormal# flight]#_p#"
+- "[_p:synesthesia,#_paranormal# flight]#_p#"
+- "[_p:prophecy,#_paranormal# prophecy]#_p#"
+- "[_p:levitation,#_paranormal# levitation]#_p#"
+- "[_skill:travel,communication,sight,attunement]interdimensional #_skill#"
+
+_normalAbility:
+- hearing
+- vision
+- smell
+- touch
+- taste
+- memory
+- persuasion
+- insight
+- perception
+- augmentation
+- healing
+- vampirism
+- senses
+- penmanship
+- stillness
+- willpower
+- "#_normalAbilitySpecialty#"
+- "#_normalAbilitySpecialty#"
+- "#_normalAbilitySpecialty#"
+- "#_normalAbilitySpecialty#"
+
+_normalAbilitySpecialty:
+- gastronomy
+- zymurgy
+- carpentry
+
+_abilityEnhancement:
+- accelerated
+- enhanced
+- empathic
+- improved
+- superhuman
+- "#_paranormal#"
+- "#_paranormal#"
+
+_unusualSubstanceModifier:
+- acid
+- lava
+- quicksilver
+- brimstone
+- sulfuric
+- vaporous
+- sanguine
+- luminous
+- magnetic
+- enchanted
+- fluorescent
+- superheated
+- supercooled
+- poisonous
+- caustic
+- corrosive
+- gastric
+- ghostly
+- foggy
+- irresistible
+- seductive
+- opalescent
+- misty
+- gossamer
+- prismatic
+- disorienting
+- psychoactive
+- adhesive
+- superdense
+- sonic
+- crystalline
+- necrotic
+- flammable
+- incendiary
+- explosive
+- invisible
+- aphrodisiac
+- cursed
+
+_secretion:
+- vomit
+- tears
+- sweat
+- perspiration
+- breath
+- spittle
+- blood
+- mucus
+- earwax
+- phlegm
+- "#_materialBodyAspect#"
+
+# TODO: combine with appropriate materials list (stone, fungal, wooden, etc.), plus 
+_materialBodyAspect:
+- skin
+- flesh
+- hair
+- bones
+- blood
+- "[_fingerToe]#_fingerToe#nails"
+
+_groupEntityBasedPower_BroadGroup:
+- animals
+- "#_animalPlural#"
+- "#mysticalEntityCategory#"
+
+_groupBasedEntityPowerPhrase:
+- to talk to
+- to speak with
+- to communicate with
+- to commune with
+- to banish
+
+_itemBasedEntityPowerPhrase:
+- to materialize
+- to shrink
+- to enlarge
+- to camoflauge
+
+_powerDisposition:
+- at will
+- once a day
+- "[_moonType:new,full,half,blood,harvest]during a #_moonType# moon"
+- "[_whileWhat:asleep,dreaming,unconscious,singing,hidden]while #_whileWhat#"
+
+_powerAbility:
+- power
+- ability

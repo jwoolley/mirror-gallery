@@ -32,8 +32,8 @@ function loadConfigOverride(overridePath) {
 }
 
 
-function _initGlobalConfig(configOverridePath) {
-	if (!global.mtgnewsbot) {
+function _initGlobalConfig(configOverridePath, forceReload) {
+	if (forceReload || !global.mtgnewsbot) {
 		global.mtgnewsbot = {};
 	}
 
@@ -93,8 +93,8 @@ class Config {
 		Object.freeze(this);
 	}
 
-	static initGlobalConfig(configOverridePath) {
-		return _initGlobalConfig(configOverridePath);
+	static initGlobalConfig(configOverridePath, forceReload) {
+		return _initGlobalConfig(configOverridePath, forceReload);
 	}
 
 	static get globalConfig() {

@@ -1,6 +1,6 @@
 const { watch } = require('fs/promises');
 const MirrorGallery = require('../src/mirror-gallery');
-const NUM_HEADLINES = 5;
+const NUM_HEADLINES = 1;
 
 async function runMirrorGallery() {
   try {

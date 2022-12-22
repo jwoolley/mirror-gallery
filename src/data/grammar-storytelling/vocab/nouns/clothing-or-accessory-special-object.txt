@@ -1,0 +1,2 @@
+armor[_itemObjectSpecial:suit of]
+chainmail[_itemObjectSpecial:suit of]

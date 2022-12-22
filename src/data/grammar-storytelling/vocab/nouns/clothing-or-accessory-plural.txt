@@ -1,0 +1,23 @@
+stockings
+pants
+breeches
+trousers
+boots
+goggles
+eyeglasses
+earmuffs
+suspenders
+overalls
+longjohns
+smallclothes
+mittens
+pajamas
+cufflinks
+hosiery
+leggings
+lederhosen
+woolens
+gloves
+opera glasses
+crutches
+stilts
