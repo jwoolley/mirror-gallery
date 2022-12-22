@@ -1,0 +1,134 @@
+magicalItem: "#_nounMagicalItem##_magicalItem#"
+
+nonMagicalItem:
+- "#nonMagicalItemSimple#"
+- "#nonMagicalItemEmbellished#"
+
+nonMagicalItemSimple:
+- "#craftedPreciousObject#"
+- "#weaponItemForEnchantment#"
+
+nonMagicalItemEmbellished:
+- "#preciousMaterialDescriptive# #nonMagicalItemSimple#"
+
+_nounMagicalItem:
+- "[_magicalItem:potion,elixir,tonic][#_itemUseRulesDrink#]"
+- "[_pill:lozenge][_magicalItem:#_nounPlainItemMagicalModifier# #_pill#,#_nounPlainItemMagicalModifier# #_pill#,#_pill#][#_itemUseRulesIngest#]"
+- "[_balm:balm,ointment,salve,linament][_magicalItem:#_nounPlainItemMagicalModifier# #_balm#,#_nounPlainItemMagicalModifier# #_balm#,#_balm#][#_itemUseRulesApply#]"
+- "[_gem:gem,gemstone,jewel,#gemstone#,#gemstone#,#gemstone#][_magicalItem:#_nounPlainItemMagicalModifier# #_gem#,#_nounPlainItemMagicalModifier# #_gem#,#_gem#][#_itemUseRulesHold#]"
+- "[_magicalItem:#preciousMaterialDescriptive# #craftedPreciousObject#][#_itemUseRulesHold#]"
+- "[_weapon:#weaponItemForEnchantment#][_magicalItem:#preciousMaterialDescriptive# #_weapon#,#_nounPlainItemMagicalModifier# #_weapon#,#_weapon#][#_itemUseRulesWield#]"
+
+# should parse as an object; i.e. a/an #gemstone#
+gemstone:
+- diamond
+- emerald
+- ruby
+- pearl
+- sapphire
+- opal
+- amethyst
+- aquamarine
+- onyx
+- bloodstone
+- moonstone
+- topaz
+- garnet
+- agate
+
+gemstoneMaterial:
+- "#gemstone#"
+- amber
+- jade
+- opaline
+- quartz
+- turquoise
+
+preciousMaterialDescriptive:
+- "#gemstoneMaterial#"
+- "#gemstoneMaterial#"
+- "#gemstoneMaterial#"
+- alabaster
+- gold
+- silver
+- pewter
+- tin
+- bronze
+- copper
+- glass
+- scrimshaw
+- coral
+- ivory
+
+preciousMaterialObjectOrSubstance:
+- "#gemstoneMaterial.s#"
+- "#gemstoneMaterial.s#"
+- alabaster
+- gold
+- silver
+- pewter
+- tin
+- bronze
+- copper
+- glass
+- scrimshaw
+- coral
+- ivory
+
+# TODO: separate into wearable/non-wearable (and/or useable? )
+craftedPreciousObject:
+- figurine
+- box
+- cameo
+- bauble
+- bangle
+- charm
+- choker
+- cross
+- signet
+- pin
+- locket
+- badge
+- medallion
+- knickkack
+- scepter
+- insignia
+- emblem
+- seal
+
+weaponItemForEnchantment:
+- sword
+- axe
+- maul
+- halberd
+- dagger
+- crossbow
+
+_itemUseRulesDrink: "[_itemObjectVerb:use,drink,drink,drink,quaff][_itemObjectConsumer:drinker,drinker,user]"
+
+_itemUseRulesIngest: "[_itemObjectVerb:use,swallow,consume,ingest][_itemObjectConsumer:consumer,user]"
+
+_itemUseRulesApply: "[_itemObjectVerb:use,apply,administer][_itemObjectConsumer:consumer,user]"
+
+_itemUseRulesHold: "[_itemObjectVerb:hold,own,keep,bear,possess][_itemObjectConsumer:holder,owner,keeper,bearer,user]"
+
+# TODO: prime with "_itemUseRulesHold" and augment?
+_itemUseRulesWield: "[_itemObjectVerb:hold,use,wield,brandish,own][_itemObjectConsumer:holder,wielder,owner,user]"
+
+_nounPlainItemMagicalModifier:
+- enchanted
+- charmed
+- magical
+- mystical
+- arcane
+- special
+- cursed
+- forgotten
+- forbidden
+- ancient
+- unusual
+- strange
+- fancy
+- plain
+- "#adjItemPersonality#"
+- "#adjItemPersonality#"

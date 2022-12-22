@@ -15,11 +15,10 @@ mysticalEntity:
 - gorgon
 - cockatrice
 - hellhound
-- 
 - "#mysticalEntitySpectral#"
 - "#mysticalEntityAngelicDemonic#"
 - "#mysticalEntityPractitioner#"
-- "[_lycanthrope:lycanthrope,were#animal#]#_lycanthrope#" 
+- "[_lycanthrope:lycanthrope,were#animal.hyphenate#]#_lycanthrope#" 
 
 mysticalEntitySpectral:
 - spirit
@@ -50,4 +49,5 @@ mysticalEntityCategory:
 - the undead
 - faeries
 - lycanthropes
+- merfolk
 - "#mysticalEntity.s#"

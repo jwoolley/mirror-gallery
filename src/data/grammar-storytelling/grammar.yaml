@@ -10,6 +10,16 @@ foundStoryAccount:
 - "[_bearerDesc:#_whichGrantsTheBearer_grant.s# #_whichGrantsTheBearer_bearerDescription#]You #_find_foundStory# #_discoveredItem.a# #_whichGrantsTheBearerThePowerEmbellished#."
 - "[_bearerDesc:#_whichGrantsTheBearer_grant.s# #_whichGrantsTheWearer_wearerDescription#]You #_find_foundStory# #_discoveredWearableItem.a# #_whichGrantsTheBearerThePower#."
 - "[_bearerDesc:#_whichGrantsTheBearer_grant.s# #_whichGrantsTheWearer_wearerDescription#]You #_find_foundStory# #_discoveredWearableItem.a# #_whichGrantsTheBearerThePowerEmbellished#."
+- "#_foundMagicalItemVariantRule#"
+
+_foundMagicalItemVariantRule: "[#magicalItem#][_item:#_magicalItem#][_power:#specialPower#]#_foundMagicalItemVariant#"
+
+_foundMagicalItemVariant:
+- "You #_find_foundStory# #_magicalItem.a# #_whichThat# gives #_power# to [_thePerson:the person who #_itemObjectVerb.s# it,the #_itemObjectConsumer#]#_thePerson#."
+- "You #_find_foundStory# #_magicalItem.a# #_whichThat# [_imparts:imparts,grants][_thePerson:the person who #_itemObjectVerb.s# it,the #_itemObjectConsumer#]#_imparts# #_thePerson# #_power#."
+- "You #_find_foundStory# #_magicalItem.a# #_whichThat# [_imbues:imbues,imparts,instills][_thePerson:the person who #_itemObjectVerb.s# it,the #_itemObjectConsumer#]#_imbues# #_thePerson# with #_power#."
+- "You #_find_foundStory# #_magicalItem.a# #_whichThat# [_imparts:imparts][_thePerson:the person who #_itemObjectVerb.s# it,the #_itemObjectConsumer#]#_imparts# #_power# to #_thePerson#."
+
 # - "You #_find_foundStory# #_discoveredItem.a# [__bearer:bearer]#_whichGrantsTheBearerThePower#."
 # - "You #_find_foundStory# #_discoveredItem.a# [__bearer:bearer]#_whichGrantsTheBearerThePowerEmbellished#."
 

@@ -81,6 +81,7 @@ trophy
 ingot
 pebble
 figurine
+[_flask:flask,vial,bottle]#_flask# of #liquid#
 #bodypart#
 #nounWeapon#
 #clothingOrAccessory#
