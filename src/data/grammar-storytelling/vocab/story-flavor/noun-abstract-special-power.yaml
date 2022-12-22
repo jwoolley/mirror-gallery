@@ -1,7 +1,8 @@
-specialPower: 
+specialPower:
 - "the power of #nounAbstractSpecialPowerSimple#"
 - "#_specificPowerOf#"
 - "#_groupEntityBasedPower_rule#"
+- "#_specificPowerToPhrase#"
 
 _specificPowerOf:
 - "[_power:#_unusualSubstanceModifier#,the power of #_unusualSubstanceModifier#]#_power# #_secretion#"
@@ -11,12 +12,15 @@ _specificPowerOf:
 _specificPowerToPhrase:
 - "the #_powerAbility# to #_specificPowerTo#"
 
+ # non-item entries may need tuning?
 _specificPowerTo:
-- "[_what:#animal#]#_transform# into [_what:#_what#,#_what#,#_what# #_powerDisposition#]#_what.a#"
-- "[_what:#concreteNoun#,#concreteNoun#,#_pile# of #massNoun#]#_transform# into [_what:#_what#,#_what#,#_what# #_powerDisposition#]#_what.a#"
+- "[_what:#animal#]#_transform# into [_what:#_what#,#_what#,#_what#,#_what# #_powerDisposition#]#_what.a#"
+- "[_what:#concreteNoun#,#concreteNoun#,#_pile# of #massNoun#]#_transform# into [_what:#_what#,#_what#,#_what#,#_what# #_powerDisposition#]#_what.a#"
+- "#_itemTransformationBasedPower_rule#"
+- "[_substanceOne:#preciousMaterialObjectOrSubstance#,#preciousMaterialObjectOrSubstance#,#liquid#,#liquid#,#massNoun#,#massNoun#,#animalPlural#][_substanceTwo:#preciousMaterialObjectOrSubstance#,#preciousMaterialObjectOrSubstance#,#liquid#,#liquid#,#massNoun#,#massNoun#,#animalPlural#]transmute #_substanceOne# into #_substanceTwo#"
 
 _specificPowerUnusual:
-- "[_degree:enhanced,360-degree][_part:neck,torso,eye.limb] #_part# rotation"
+- "[_degree:enhanced,360-degree,omnidirectional,#_abilityEnhancement#][_part:neck,torso,eye,limb]#_degree# #_part# rotation"
 - "anti-adhesion"
 - "#_temporalManipulation# aging"
 - "#_temporalManipulation# sleep"
@@ -45,6 +49,14 @@ _transform:
 - transform
 - transform
 - shapeshift
+
+
+_itemTransformationBasedPower_rule:
+- "[_phrase:#_itemBasedPowerPhrase#][_powerPhrase:#_phrase# #_itemEntity.a#,#_phrase# #_itemEntity.a#,#_phrase# #_itemEntity.s#,#_phrase# #_itemEntity.s#,#_phrase# #_itemEntity.a# #_powerDisposition#]#_powerPhrase#"
+
+_itemBasedPowerPhrase:
+- "[_itemEntity:#item#,#nonMagicalItem#][_summon:summon,materialize,manifest]#_summon#"
+- "[_itemEntity:#item#,#nonMagicalItemSimple#][_affect:shrink,enlarge,conceal]#_affect#"
 
 _groupEntityBasedPower_rule:
 - "[_groupForPower:#mysticalEntity.s#,#_groupEntityBasedPower_BroadGroup#]the #_powerAbility# #_groupBasedEntityPowerPhrase# #_groupForPower#"
@@ -238,15 +250,10 @@ _groupBasedEntityPowerPhrase:
 - to commune with
 - to banish
 
-_itemBasedEntityPowerPhrase:
-- to materialize
-- to shrink
-- to enlarge
-- to camoflauge
-
 _powerDisposition:
 - at will
 - once a day
+- "[_fromOn:from,on]#_fromOn# the astral plane"
 - "[_moonType:new,full,half,blood,harvest]during a #_moonType# moon"
 - "[_whileWhat:asleep,dreaming,unconscious,singing,hidden]while #_whileWhat#"
 
