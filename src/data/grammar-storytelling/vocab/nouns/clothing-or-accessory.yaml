@@ -1,0 +1,9 @@
+clothingOrAccessory: "[#_clothingOrAccessory#]#_item#"
+
+clothingOrAccessoryObject: "#_clothingOrAccessory##_itemObject#"
+
+_clothingOrAccessory:
+- "[_item:#clothingOrAccessorySingular#][_itemObject:#_item#]"
+- "[_item:#clothingOrAccessorySingular#][_itemObject:#_item#]"
+- "[_item:#clothingOrAccessoryPlural#][_itemObject:pair of #_item#]"
+- "[_item:#clothingOrAccessorySpecialObject#][_itemObject:#_itemObjectSpecial# #_item#]"

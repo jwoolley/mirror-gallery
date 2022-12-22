@@ -1,0 +1,53 @@
+mysticalEntity:
+- vampire
+- gnome
+- faerie
+- goblin
+- golem
+- harpy
+- minotaur
+- gremlin
+- shapeshifter
+- unicorn
+- manticore
+- hobgoblin
+- griffin
+- gorgon
+- cockatrice
+- hellhound
+- 
+- "#mysticalEntitySpectral#"
+- "#mysticalEntityAngelicDemonic#"
+- "#mysticalEntityPractitioner#"
+- "[_lycanthrope:lycanthrope,were#animal#]#_lycanthrope#" 
+
+mysticalEntitySpectral:
+- spirit
+- ghost
+- spectre
+- wraith
+- poltergeist
+
+mysticalEntityAngelicDemonic:
+- devil
+- demon
+- poltergeist
+- nephilim
+- angel
+- demigod
+- deity
+
+mysticalEntityPractitioner:
+- necromancer
+- psychic
+- cultist
+- occultist
+- warlock
+- hypnotist
+- alchemist
+
+mysticalEntityCategory:
+- the undead
+- faeries
+- lycanthropes
+- "#mysticalEntity.s#"

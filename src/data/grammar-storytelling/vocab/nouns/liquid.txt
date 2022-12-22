@@ -1,7 +1,5 @@
 coffee
 tea
-cola
-pepsi
 water
 seawater
 paint
@@ -13,9 +11,6 @@ milk
 juice
 oil
 wine
-gasoline
-syrup
-maple syrup
 honey
 brine
 ink
@@ -23,19 +18,4 @@ saliva
 phlegm
 seltzer
 sap
-eggnog
-tonic water
-ginger ale
-lemonade
-brine
-paint thinner
-#animal# blood
-rainwater
-hot sauce
-alfredo sauce
-hollandaise sauce
-tartar sauce
-au jus
-kambucha
 vinegar
-bleach

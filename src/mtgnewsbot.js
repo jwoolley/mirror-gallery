@@ -18,7 +18,7 @@ class MtgNewsbot {
     this.newsEngine = new NewsEngine();
 
     this.options = options;
-
+    
     if (this.options.tweet) {
       this.options.count = 1; // Restrict to a single tweet
       this.twitter = new TwitterClient(Config.globalConfig);

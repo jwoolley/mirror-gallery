@@ -1,4 +1,3 @@
-land
 ichor
 water
 sand
@@ -7,7 +6,6 @@ wood
 fire
 ice
 lightning
-phyrexian oil
 snow
 lunch
 treasure
@@ -49,12 +47,10 @@ mustard
 cologne
 vape juice
 jewlery
-gasoline
 homework
 luggage
 soup
-tinfoil
-bitcoins
+foil
 bacon
 bread
 cardboard
@@ -72,9 +68,7 @@ gravy
 furniture
 laughter
 rubbish
-junk mail
 meat
-dietary supplements
 pasta
 pollution
 salad
@@ -89,23 +83,20 @@ signage
 bacteria
 popcorn
 glue
-facial tissue
 poison
 venom
 algae
 fungus
 carpeting
 wallpaper
-baby powder
+powder
 taffy
 pudding
 confetti
 saliva
 leather
 sawdust
-pizza
 paper-mâché
-camping gear
 spaghetti
 birdseed
 flesh

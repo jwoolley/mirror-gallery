@@ -5,7 +5,86 @@ origin:
 - "#foundStoryAccount#"
 
 foundStoryAccount:
-- "#foundStoryEntry#"
+# - "#foundStoryEntry#"
+- "[_bearerDesc:#_whichGrantsTheBearer_grant.s# #_whichGrantsTheBearer_bearerDescription#]You #_find_foundStory# #_discoveredItem.a# #_whichGrantsTheBearerThePower#."
+- "[_bearerDesc:#_whichGrantsTheBearer_grant.s# #_whichGrantsTheBearer_bearerDescription#]You #_find_foundStory# #_discoveredItem.a# #_whichGrantsTheBearerThePowerEmbellished#."
+- "[_bearerDesc:#_whichGrantsTheBearer_grant.s# #_whichGrantsTheWearer_wearerDescription#]You #_find_foundStory# #_discoveredWearableItem.a# #_whichGrantsTheBearerThePower#."
+- "[_bearerDesc:#_whichGrantsTheBearer_grant.s# #_whichGrantsTheWearer_wearerDescription#]You #_find_foundStory# #_discoveredWearableItem.a# #_whichGrantsTheBearerThePowerEmbellished#."
+# - "You #_find_foundStory# #_discoveredItem.a# [__bearer:bearer]#_whichGrantsTheBearerThePower#."
+# - "You #_find_foundStory# #_discoveredItem.a# [__bearer:bearer]#_whichGrantsTheBearerThePowerEmbellished#."
+
+_foundObject:
+- "#clothingOrAccessory#"
+- "#itemArtifactOrTreasure#"
+
+_whichGrantsTheBearerThePower:
+- "#_whichThat# #_bearerDesc# #specialPower#"
+
+_whichGrantsTheBearerThePowerEmbellished:
+- "#_whichThat# #_bearerDesc# #specialPower#"
+
+_whichThat:
+- which
+- that
+
+_whichGrantsTheBearer_bearerDescription:
+- its bearer
+- the bearer
+- the holder
+- its owner
+- the owner
+- its keeper
+- "the person who holds it"
+
+_whichGrantsTheWearer_wearerDescription:
+- its bearer
+- the wearer
+- its wearer
+- its owner
+- the owner
+- "the person wearing it"
+
+_whichGrantsTheBearer_ImbuesWith:
+
+_whichGrantsTheBearer_impart:
+- fill
+- impart
+- imbue
+- install
+- suffuse
+
+_whichGrantsTheBearer_impart_negative:
+- curse
+- burden
+- saddle
+
+_whichGrantsTheBearer_grant:
+- afford
+- bestow
+- grant
+- give
+
+_itsThe:
+- its
+- the
+
+_discoveredItem:
+- "#clothingOrAccessoryObject#"
+
+_discoveredItemEmbellished:
+- "#adjItemPersonality# #clothingOrAccessoryObject#"
+
+_discoveredWearableItem:
+- "#clothingOrAccessoryObject#"
+
+_discoveredWearableItemEmbellished:
+- "#adjItemPersonality# #clothingOrAccessoryObject#"
+
+_curses_TODO:
+- alien hand
+- "turns the [bearer] into [object,animal,substance][when:seasonal event,moon phase,they perform action,they experience happening]"
+- "renders the bearer unable to [doNormalThing]"
+- "causes the bearer to [weirdBehavior] [uncontrollably]"
 
 firstHandStoryAccount:
 
@@ -52,12 +131,15 @@ _find_foundStory:
 - chance upon
 - uncover
 - locate
+- inherit
+- are given
 - "#_dreamOf#"
 - "#_find_foundStory_news#"
 
 _find_foundStory_news:
 - catch wind of
-- "hear rumors #ofAbout#"
+- hear of
+- "hear [_rumors:a rumor,rumors]#_rumors# #ofAbout#"
 
 # framings
 ## you find a journal
@@ -323,4 +405,3 @@ encounters_verb: # vocab
 - meets
 - "[_happen:happen,come,stumble]#_happen.s# upon"
 - "is [_met:met,approached,stopped]#_met# by"
-
