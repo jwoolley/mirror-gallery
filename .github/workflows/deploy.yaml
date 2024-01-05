@@ -12,12 +12,11 @@ jobs:
 
     - name: Copy repository contents via scp
       uses: appleboy/scp-action@master
-      env:
-        HOST: ${{ secrets.EXPRESS_SERVER_VPS_HOST }}
-        PORT: ${{ secrets.EXPRESS_SERVER_VPS_PORT }}
-        USERNAME: ${{ secrets.EXPRESS_SERVER_VPS_USERNAME }}
-        KEY: ${{ secrets.EXPRESS_SERVER_VPS_SSHKEY }}
       with:
+        host: ${{ secrets.EXPRESS_SERVER_VPS_HOST }}
+        port: ${{ secrets.EXPRESS_SERVER_VPS_PORT }}
+        username: ${{ secrets.EXPRESS_SERVER_VPS_USERNAME }}
+        key: ${{ secrets.EXPRESS_SERVER_VPS_SSHKEY }}
         source: "."
         target: "/opt/express/talespinner"
 
