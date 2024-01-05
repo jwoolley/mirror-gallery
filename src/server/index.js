@@ -28,7 +28,7 @@ const storypageHtml = `<head>
 
   div.storyTextContainer {
 		padding: 1rem;
-		color: #e8d6a7;
+		color: #00ffff;
 		text-align: center;
 		font-size: 2rem;
 		text-size-adjust: 500%;
