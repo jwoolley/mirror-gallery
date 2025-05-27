@@ -1,0 +1,5 @@
+[_letter:A][_object:apple]#_letter#) #_object#
+[_letter:B][_object:banana]#_letter#) #_object#
+[_letter:C][_object:carrot]#_letter#) #_object#
+[_letter:D][_object:digeridroo]#_letter#) #_object#
+[_letter:E][_object:earwig]#_letter#) #_object#

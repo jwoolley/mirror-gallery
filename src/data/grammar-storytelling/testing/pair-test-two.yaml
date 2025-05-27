@@ -1,0 +1,5 @@
+pairTestReference:
+- "[#pairTestRefsOnly#]#_letter# ~ #_object#"
+
+pairTestReferenceTwo:
+- "[#pairTestRefsOnly#]#_letter# is for #_object#, [#pairTestRefsOnly#]#_letter# is for #_object#."

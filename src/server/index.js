@@ -52,7 +52,7 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 });
 
-app.get('/story', async (req, res) => {
+app.get(['/', '/story'], async (req, res) => {
   const numStories = 1;
   console.log(`Making request to storyApi (numStories=${numStories})`);
   try {
