@@ -48,9 +48,9 @@ const storypageHtml = `<head>
 </head>
 <body><div class="storyTextContainer">__STORY_TEXT__</div></body>`;
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-});
+// app.get('/', (req, res) => {
+//   res.send('Hello World!')
+// });
 
 app.get(['/', '/story'], async (req, res) => {
   const numStories = 1;
